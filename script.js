@@ -2,35 +2,41 @@ let input = document.querySelector("input");
 let btn = document.querySelector(".submit");
 let errormsg = document.querySelector(".errormsg");
 let output = document.querySelector(".output");
-let success = document.querySelector(".success");
+let attempts = document.querySelector(".attempts");
 
 var number = Math.floor(Math.random() * 100);
 console.log(number);
 
+var count=0;
+
 function check() {
+count++;
   var guess = Number(input.value);
   if (guess < 1 || guess > 100) {
     
     errormsg.innerText = "Please enter a number between 1 and 100";
-    const myTimeout = setTimeout(function (){location.reload()}, 5000);
-    
+    const myTimeout = setTimeout(function (){errormsg.innerText = "";}, 5000);
+       
     
   } else if(guess===number){
-    output.innerText="Yay! You made it.You are a genius"
+    output.innerText=`Yay! You made it in ${count} attempts only. You are a genius`;
+
   }
   else if (guess > number) {
     if (guess - number <= 10) {
-      output.innerText = "You are close to the number";
+      output.innerText = "You are close to the number, just need a little effort";
+      
     } else {
       output.innerText = "Your Guess is too high";
     }
   } else if (guess < number) {
     if (number - guess < 11) {
-      output.innerText = "You are close to the number";
+      output.innerText = "You are close to the number. just need to put some more effort";
     } else {
       output.innerText = "Your Guess is too low";
     }
   }
+  attempts.innerHTML+=`<li>Attempt No. ${count}👉🏼 <span class="guessed_number"> ${guess}</span></li>`;
 }
 
 btn.addEventListener("click", check);
