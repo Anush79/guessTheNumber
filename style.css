@@ -20,7 +20,9 @@ body{
 .sections{
    display:grid;
    grid-template-columns: 1fr 2fr 2fr ;
+
 }
+
 main{
     display: flex;
     flex-direction: column;
@@ -128,5 +130,47 @@ margin-top:-20px;
     border-radius:50%;
 }
 .attempts{
+    font-size:14px;
+    margin-top:25px;
+    list-style-type:none;
 
+}
+.attempts li{
+    margin-left:150px;
+    margin-top:15px;
+    animation-name: moveInleft;
+    animation-duration: 3s;  
+    animation-fill-mode:forwards;
+}
+@keyframes moveInleft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+.guessed_number{
+font-size:1.5rem;
+color:#ffee00;
+background-color: rgba(0, 0, 0, 0.458);
+border-radius:40%;
+padding:0 5px;
+}
+footer {
+    
+    position: fixed;
+    top:93%;
+    left:85%;
+
+}
+footer a{
+ text-decoration: none;
+ color:purple;
 }
