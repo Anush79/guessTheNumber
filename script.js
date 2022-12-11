@@ -21,6 +21,7 @@ function check() {
         errormsg.innerText = "";
       }, 5000);
     } else if (guess === number) {
+      output.style.color="green";
       output.innerText = `Yay! You made it in ${count} attempts only. You are a genius`;
       win = true;
     } else if (guess > number) {

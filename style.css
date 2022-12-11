@@ -14,12 +14,12 @@ body{
     margin: auto;
     padding-top:10%;
     font-size: 1.1rem;
-    background: linear-gradient(15deg, #cf6b6b, #a871bc);
+    background: linear-gradient(35deg, #dce94a, #a60ade);
     background-repeat: no-repeat;
 }
 .sections{
    display:grid;
-   grid-template-columns: ;
+   grid-template-columns: 1fr 2fr 2fr ;
 }
 main{
     display: flex;
@@ -30,7 +30,8 @@ main{
 header{
     position: fixed;
     top:2%;
-    text-align: center;
+    left:5%;
+    text-align:left;
 }
 .board{
     display: flex;
@@ -54,19 +55,19 @@ justify-content: center;
 }
 
 input{
-    width:200px;
+    width:270px;
     height: 50px;
-    font-size:2rem;
+    font-size:1.7rem;
     text-align: center;
     margin:10px;
     border: none;
-
+    background:#cefefe;
     font-family:'pacifico', 'cursive';
 }
 button{
     display: block;
     margin:20px ;
-    padding:10px;
+    padding:8px;
     font-size: 1.2rem;
     border-radius: 10px;
     background-color: #a871bc;
