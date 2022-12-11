@@ -38,7 +38,7 @@ function check() {
         output.innerText = "Your Guess is too low";
       }
     }
-    attempts.innerHTML += `<li>Attempt No. ${count}👉🏼 <span class="guessed_number"> ${guess}</span></li>`;
+    attempts.innerHTML += `<li> Attempt No. ${count}👉🏼 <span class="guessed_number"> ${guess}</span></li>`;
   } 
   else {
     location.reload();
