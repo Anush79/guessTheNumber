@@ -174,3 +174,9 @@ footer a{
  text-decoration: none;
  color:purple;
 }
+
+@media  only screen and (max-width:400px) {
+    .board{
+        transform: scale(0.5);
+    }
+}
