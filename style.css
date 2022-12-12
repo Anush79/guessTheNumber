@@ -15,7 +15,7 @@ body{
     margin: auto;
     padding-top:10%;
     font-size: 1.1rem;
-    background: linear-gradient(103deg, #a60ade ,#dce94a 30%, #a60ade);
+    background: linear-gradient(103deg, #a60ade ,#dce94a , #a60ade);
     background-repeat: no-repeat;
 }
 .sections{
