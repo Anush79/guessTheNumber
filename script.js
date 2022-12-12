@@ -1,8 +1,14 @@
 let input = document.querySelector("input");
-let btn = document.querySelector(".submit");
+let submit = document.querySelector(".submit");
 let errormsg = document.querySelector(".errormsg");
 let output = document.querySelector(".output");
 let attempts = document.querySelector(".attempts");
+let btn_reset= document.querySelector(".btn-reset");
+
+btn_reset.addEventListener("click", function(){
+  location.reload();
+
+})
 
 var number = Math.floor(Math.random() * 100);
 console.log(number);
@@ -15,6 +21,7 @@ function check() {
   var guess = Number(input.value);
 
   if (!win) {
+    if(count < 11){
     if (guess < 1 || guess > 100) {
       errormsg.innerText = "Please enter a number between 1 and 100";
       const myTimeout = setTimeout(function () {
@@ -40,10 +47,18 @@ function check() {
       }
     }
     attempts.innerHTML += `<li> Attempt No. ${count}👉🏼 <span class="guessed_number"> ${guess}</span></li>`;
+  }
+  else{
+    output.style.color="red";
+    output.innerText ="Oh no! You ran out of attempts🤷‍♀️"
+    btn_reset.style.display="block";
+    submit.style.display="none";
+  }
+  
   } 
   else {
     location.reload();
   }
 }
 
-btn.addEventListener("click", check);
+submit.addEventListener("click", check);
