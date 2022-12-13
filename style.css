@@ -15,7 +15,7 @@ body{
     margin: auto;
     padding-top:10%;
     font-size: 1.1rem;
-    background: linear-gradient(103deg, #a60ade ,#dce94a , #a60ade);
+    background: linear-gradient(103deg, #15031b ,#f7ff9e 50% , #08010b);
     background-repeat: no-repeat;
 }
 .sections{
@@ -31,6 +31,7 @@ main{
     align-items: center;
 }
 header{
+    color:#ffee00;
     position: fixed;
     top:2%;
     left:5%;
