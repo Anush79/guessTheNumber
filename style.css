@@ -15,7 +15,7 @@ body{
     margin: auto;
     padding-top:10%;
     font-size: 1.1rem;
-    background: linear-gradient(103deg, #15031b ,#f7ff9e 50% , #08010b);
+    background: linear-gradient(103deg, #15031b,#16021e ,#f7ff9e , #16021e,#15031b );
     background-repeat: no-repeat;
 }
 .sections{
@@ -144,6 +144,7 @@ margin-top:-30px;
 
 }
 .attempts li{
+    color:#ffee00;
     margin-left:30%;
     margin-top:15px;
     animation-name: moveInleft;
