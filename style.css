@@ -82,6 +82,13 @@ button{
     font-family:'pacifico';
     border:none;
 }
+button:hover{
+    transform:scale(0.9);
+}
+button:focus, button:active{
+    background-color: #61406d;
+}
+
 .output{
 font-size: 1.4rem;
 color: blue;font-weight: 700;

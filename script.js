@@ -7,36 +7,63 @@ let btn_reset = document.querySelector(".btn-reset");
 let btn_easy = document.querySelector(".easy");
 let btn_medium = document.querySelector(".medium");
 let btn_hard = document.querySelector(".hard");
-
+let instruction = document.querySelector(".instruction");
 
 btn_reset.addEventListener("click", function () {
   location.reload();
 });
 
-
+//Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=6713">Pixabay</a>
 
 var count = 0;
 var win = false;
 
 
-var number_easy = Math.floor(Math.random() * 100);
+  var number_easy = Math.floor(Math.random() * 100);
   console.log("Easy num is"+number_easy);
 var number_medium = Math.floor(Math.random() * 50);
   console.log("Medium num is"+number_medium);
 var number_hard = Math.floor(Math.random() * 10);
   console.log("Hard num is"+number_hard);
+ 
 
-  btn_easy.addEventListener("click", function(){
-    submit.addEventListener("click", checkeasy);
+
+
+let current_level= "";
+  btn_easy.addEventListener("click", ()=>{
+    return current_level= "easy";
   })
 
-  btn_easy.addEventListener("click", function(){
-    submit.addEventListener("click", checkmedium);
+  btn_medium.addEventListener("click", function(){
+    return current_level= "medium";
   })
   
-  btn_easy.addEventListener("click", function(){
-    submit.addEventListener("click", checkhard);
+  btn_hard.addEventListener("click", function(){
+    return current_level= "hard";
   })
+
+  submit.addEventListener("click", ()=>{
+     switch (current_level) {
+      case "easy":
+        instruction.innerHTML="<p>Guess a Number between 0 t0 100</p><p>You will get 10 attempts.</p>"
+        checkeasy();
+        break;
+        case "medium":
+          instruction.innerHTML="<p>Guess a Number between 0 t0 50</p><p>You will get 6 attempts.</p>"
+
+          checkmedium();
+          break;
+          case "hard":
+            instruction.innerHTML="<p>Guess a Number between 0 t0 10</p><p>You will get 10 attempts.</p>"
+
+        checkhard();
+        break;
+      default:
+        break;
+     }
+  });
+
+console.log(current_level);
 
 function checkeasy() {
   let number= number_easy;
@@ -54,6 +81,7 @@ function checkeasy() {
         output.style.color = "green";
         output.innerText = `Yay! You made it in ${count} attempts only. You are a genius`;
         win = true;
+        submit.innerText="click to play more";
       } else if (guess > number) {
         if (guess - number <= 10) {
           output.innerText =
@@ -85,10 +113,10 @@ function checkeasy() {
 
 function checkmedium() {
   count++;
-  var guess = Number(input.value);
-
+  let guess = Number(input.value);
+  let number = number_medium;
   if (!win) {
-    if (count < 7) {
+    if (count <= 7) {
       if (guess < 1 || guess > 50) {
         errormsg.innerText = "Please enter a number between 1 and 50";
         const myTimeout = setTimeout(function () {
@@ -98,6 +126,7 @@ function checkmedium() {
         output.style.color = "green";
         output.innerText = `Yay! You made it in ${count} attempts only. You are a genius`;
         win = true;
+        submit.innerText="click to play more";
       } else if (guess > number) {
         output.innerText = "Your Guess is too high";
       } else if (guess < number) {
@@ -131,10 +160,11 @@ function checkhard() {
         output.style.color = "green";
         output.innerText = `Yay! You made it in ${count} attempts only. You are a genius`;
         win = true;
+        submit.innerText="click to play more";
       } else if (guess > number) {
-        output.innerText = "Your Guess is high";
+        output.innerText = "Nope, this is not my number, you guessed more";
       } else if (guess < number) {
-        output.innerText = "Your Guess is low";
+        output.innerText = "This is definitely not my number. you guessed it less";
       }
     } else {
       output.style.color = "red";
@@ -143,6 +173,7 @@ function checkhard() {
       submit.style.display = "none";
     }
   } else {
+   
     location.reload();
   }
 }
