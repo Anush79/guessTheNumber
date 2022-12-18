@@ -19,11 +19,9 @@ var count = 0;
 var win = false;
 
 var number_easy = Math.floor(Math.random() * 100);
-console.log("Easy num is" + number_easy);
 var number_medium = Math.floor(Math.random() * 50);
-console.log("Medium num is" + number_medium);
 var number_hard = Math.floor(Math.random() * 10);
-console.log("Hard num is" + number_hard);
+
 
 let current_level = "";
 btn_easy.addEventListener("click", () => {
@@ -48,19 +46,24 @@ submit.addEventListener("click", () => {
   switch (current_level) {
     case "easy":
       checkeasy();
+      btn_medium.disabled=true;
+      btn_hard.disabled = true;
       break;
     case "medium":
       checkmedium();
+      btn_easy.disabled=true;
+      btn_hard.disabled = true;
       break;
     case "hard":
       checkhard();
+      btn_medium.disabled=true;
+      btn_easy.disabled = true;
       break;
     default:
+      errormsg.innerText="Please select a level first";
       break;
   }
 });
-
-console.log(current_level);
 
 function checkeasy() {
   let number = number_easy;
@@ -73,7 +76,7 @@ function checkeasy() {
         errormsg.innerText = "Please enter a number between 1 and 100";
         const myTimeout = setTimeout(function () {
           errormsg.innerText = "";
-        }, 5000);
+        }, 4000);
       } else if (guess === number) {
         output.style.color = "green";
         output.innerText = `Yay! You made it in ${count} attempts only. You are a genius`;

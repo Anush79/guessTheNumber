@@ -194,12 +194,11 @@ background-color: rgba(0, 0, 0, 0.458);
 border-radius:40%;
 padding:0 5px;
 }
+
 footer {
-    
     position: fixed;
     top:93%;
     left:85%;
-
 }
 footer a{
     background-color: rgba(0, 0, 0, 0.633);
@@ -208,7 +207,13 @@ footer a{
  text-decoration: none;
  color:yellow;
 }
-
+.sorryText{
+    color:#61406d;
+}
+.sorryText span{
+    color:green;
+    font-size: 2rem;
+}
 @media  only screen and (max-width:400px) {
     .board{
         transform: scale(0.5);
