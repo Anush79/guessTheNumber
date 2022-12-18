@@ -17,15 +17,22 @@ btn_reset.addEventListener("click", function () {
 
 var count = 0;
 var win = false;
+class computation {
+  #number_easy = Math.floor(Math.random() * 100);
+  #number_medium = Math.floor(Math.random() * 50);
+  #number_hard = Math.floor(Math.random() * 10);
+  getvalue() {
+    return [this.#number_easy, this.#number_medium, this.#number_hard];
+  }
+}
 
-var number_easy = Math.floor(Math.random() * 100);
-var number_medium = Math.floor(Math.random() * 50);
-var number_hard = Math.floor(Math.random() * 10);
-
+// var number_easy = Math.floor(Math.random() * 100);
+// var number_medium = Math.floor(Math.random() * 50);
+// var number_hard = Math.floor(Math.random() * 10);
 
 let current_level = "";
 btn_easy.addEventListener("click", () => {
-  instruction.innerHTML = 
+  instruction.innerHTML =
     "<h3 class=level>Easy level</h3><p> Guess a Number between 0 t0 100</p><p>You will get 10 attempts only.</p>";
   return (current_level = "easy");
 });
@@ -46,27 +53,29 @@ submit.addEventListener("click", () => {
   switch (current_level) {
     case "easy":
       checkeasy();
-      btn_medium.disabled=true;
+      btn_medium.disabled = true;
       btn_hard.disabled = true;
       break;
     case "medium":
       checkmedium();
-      btn_easy.disabled=true;
+      btn_easy.disabled = true;
       btn_hard.disabled = true;
       break;
     case "hard":
       checkhard();
-      btn_medium.disabled=true;
+      btn_medium.disabled = true;
       btn_easy.disabled = true;
       break;
     default:
-      errormsg.innerText="Please select a level first";
+      errormsg.innerText = "Please select a level first";
       break;
   }
 });
 
+let computer = new computation();
+
 function checkeasy() {
-  let number = number_easy;
+  let number = computer.getvalue()[0];
   count++;
   var guess = Number(input.value);
 
@@ -74,9 +83,7 @@ function checkeasy() {
     if (count < 11) {
       if (guess < 1 || guess > 100) {
         errormsg.innerText = "Please enter a number between 1 and 100";
-        const myTimeout = setTimeout(function () {
-          errormsg.innerText = "";
-        }, 4000);
+        setTimeout(() => (errormsg.innerText = ""), 3000);
       } else if (guess === number) {
         output.style.color = "green";
         output.innerText = `Yay! You made it in ${count} attempts only. You are a genius`;
@@ -112,7 +119,7 @@ function checkeasy() {
 function checkmedium() {
   count++;
   let guess = Number(input.value);
-  let number = number_medium;
+  let number = computer.getvalue()[1];
   if (!win) {
     if (count <= 7) {
       if (guess < 1 || guess > 50) {
@@ -143,7 +150,7 @@ function checkmedium() {
 }
 
 function checkhard() {
-  let number = number_hard;
+  let number = computer.getvalue()[2];
   count++;
   var guess = Number(input.value);
 
