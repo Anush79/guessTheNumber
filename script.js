@@ -28,19 +28,19 @@ console.log("Hard num is" + number_hard);
 let current_level = "";
 btn_easy.addEventListener("click", () => {
   instruction.innerHTML = 
-    "<h3 class=level>Easy level</h3><p> Guess a Number between 0 t0 100</p><p>You will get 10 attempts.</p>";
+    "<h3 class=level>Easy level</h3><p> Guess a Number between 0 t0 100</p><p>You will get 10 attempts only.</p>";
   return (current_level = "easy");
 });
 
 btn_medium.addEventListener("click", function () {
   instruction.innerHTML =
-    "<h3 class=level>Medium level</h3><p>Guess a Number between 0 t0 50</p><p>You will get 6 attempts.</p>";
+    "<h3 class=level>Medium level</h3><p>Guess a Number between 0 t0 50</p><p>You will get 6 attempts only.</p>";
   return (current_level = "medium");
 });
 
 btn_hard.addEventListener("click", function () {
   instruction.innerHTML =
-    "<h3 class=level>Hard level</h3><p>Guess a Number between 0 t0 10</p><p>You will get 10 attempts.</p>";
+    "<h3 class=level>Hard level</h3><p>Guess a Number between 0 t0 10</p><p>You will get 3 attempts only.</p>";
   return (current_level = "hard");
 });
 
@@ -97,7 +97,7 @@ function checkeasy() {
       attempts.innerHTML += `<li> Attempt No. ${count}👉🏼 <span class="guessed_number"> ${guess}</span></li>`;
     } else {
       output.style.color = "red";
-      output.innerText = "Oh no! You ran out of attempts🤷‍♀️";
+      output.innerHTML = `<p >Oh no! you exceeded number of attempts 🤷‍♀️</p><p class="sorryText">I had the number <span>${number}</span> in my mind 😞</p>`;
       btn_reset.style.display = "block";
       submit.style.display = "none";
     }
@@ -130,7 +130,7 @@ function checkmedium() {
       attempts.innerHTML += `<li> Attempt No. ${count}👉🏼 <span class="guessed_number"> ${guess}</span></li>`;
     } else {
       output.style.color = "red";
-      output.innerText = "Oh no! You ran out of attempts🤷‍♀️";
+      output.innerHTML = `<p >Oh no! You ran out of attempts🤷‍♀️</p><p class="sorryText">I had the number <span>${number}</span> in my mind 😞</p>`;
       btn_reset.style.display = "block";
       submit.style.display = "none";
     }
@@ -164,7 +164,7 @@ function checkhard() {
       }
     } else {
       output.style.color = "red";
-      output.innerText = "Oh no! You ran out of attempts🤷‍♀️";
+      output.innerHTML = `<p >Oh no! There are no attempts left🤷‍♀️</p><p class="sorryText">I had the number <span>${number}</span> in my mind 😞</p>`;
       btn_reset.style.display = "block";
       submit.style.display = "none";
     }
