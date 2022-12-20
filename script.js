@@ -33,19 +33,19 @@ class computation {
 let current_level = "";
 btn_easy.addEventListener("click", () => {
   instruction.innerHTML =
-    "<h3 class=level>Easy level</h3><p> Guess a Number between 0 t0 100</p><p>You will get 10 attempts only.</p>";
+    "<h3 class=level>Easy level</h3><p> Guess a Number between 0 to 100</p><p>You will get 10 attempts only.</p>";
   return (current_level = "easy");
 });
 
 btn_medium.addEventListener("click", function () {
   instruction.innerHTML =
-    "<h3 class=level>Medium level</h3><p>Guess a Number between 0 t0 50</p><p>You will get 6 attempts only.</p>";
+    "<h3 class=level>Medium level</h3><p>Guess a Number between 0 to 50</p><p>You will get 6 attempts only.</p>";
   return (current_level = "medium");
 });
 
 btn_hard.addEventListener("click", function () {
   instruction.innerHTML =
-    "<h3 class=level>Hard level</h3><p>Guess a Number between 0 t0 10</p><p>You will get 3 attempts only.</p>";
+    "<h3 class=level>Hard level</h3><p>Guess a Number between 0 to 10</p><p>You will get 3 attempts only.</p>";
   return (current_level = "hard");
 });
 
@@ -68,6 +68,8 @@ submit.addEventListener("click", () => {
       break;
     default:
       errormsg.innerText = "Please select a level first";
+      setTimeout(() => (errormsg.innerText = ""), 3000);
+
       break;
   }
 });
@@ -124,9 +126,8 @@ function checkmedium() {
     if (count <= 7) {
       if (guess < 1 || guess > 50) {
         errormsg.innerText = "Please enter a number between 1 and 50";
-        const myTimeout = setTimeout(function () {
-          errormsg.innerText = "";
-        }, 5000);
+        setTimeout(() => (errormsg.innerText = ""), 3000);
+
       } else if (guess === number) {
         output.style.color = "green";
         output.innerText = `Yay! You made it in ${count} attempts only. You are a genius`;
@@ -158,9 +159,8 @@ function checkhard() {
     if (count < 3) {
       if (guess < 1 || guess > 10) {
         errormsg.innerText = "Please enter a number between 1 and 10";
-        const myTimeout = setTimeout(function () {
-          errormsg.innerText = "";
-        }, 5000);
+        setTimeout(() => (errormsg.innerText = ""), 3000);
+
       } else if (guess === number) {
         output.style.color = "green";
         output.innerText = `Yay! You made it in ${count} attempts only. You are a genius`;
