@@ -5,38 +5,55 @@
     box-sizing:border-box;
 
 }
+html{
+    height: 100%;
+}
 body{
-    height: 100vh;
-    width:100%;
+   height: 100%;
     font-family:'pacifico', 'cursive';
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    padding-top:10%;
     font-size: 1.1rem;
     background: linear-gradient(103deg, #15031b,#16021e ,#f7ff9e , #16021e,#15031b );
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+  
+    
 }
 .sections{
    display:grid;
-   grid-template-columns: 1fr 2fr 1fr ;
+   grid-template-columns: 1fr 5fr 1fr ;
+   align-items: center;
 
 }
 
 main{
+    height: 100%;
+    width:100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    transition:0.3s
 }
 header{
     color:#ffee00;
-    position: fixed;
-    top:2%;
-    left:5%;
+    margin-right: auto;
+    margin-left: 2%;
+    margin-top: -50px;
     text-align:left;
 }
+
+.instruction{
+    text-align: center;
+    margin:5px;
+    height:auto;   
+    transition:3s; 
+}
+.choose-level{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: auto;justify-content: space-evenly;
+}
+
 .board{
     display: flex;
 flex-direction: column;
@@ -48,8 +65,10 @@ justify-content: center;
     position:relative;
     margin: auto;
     background:#cefefe;
-    height:350px;
-    width: 500px;
+    /* height:350px;
+    width: 500px; */
+    height:40vh;
+    width:70%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -57,10 +76,11 @@ justify-content: center;
     border-radius: 10px;
     border:20px solid rgb(173, 43, 7);
     box-shadow: 0px 1px 0px 5px rgb(121, 31, 6);
+    transition: 1s;
 }
 
 input{
-    width:270px;
+    width:80%;
     height: 50px;
     font-size:1.7rem;
     text-align: center;
@@ -82,22 +102,37 @@ button{
     font-family:'pacifico';
     border:none;
 }
+button:hover{
+    transform:scale(0.9);
+}
+button:focus, button:active{
+    background-color: #61406d;
+}
+.easy, .medium, .hard{
+    height: auto;
+    width: 100px;
+    }
+
 .output{
 font-size: 1.4rem;
-color: blue;font-weight: 700;
-
+color: blue;
+font-weight: 700;
 }
+
 .stand{
     position: relative;
+    margin: auto;
     top:-10px;
     width: 230px;
     height:25px;
     border-radius:0 0 10px 10px;
     background-color: rgb(137, 42, 16);
     border:2px solid rgb(95, 28, 9);
+    
 }
+
 .legs{
-    display: flex;
+display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
@@ -123,18 +158,13 @@ margin-top:-30px;
     transform: rotate(-21deg);
     height:200px;
 }
-.left::after{
-    content: ' ';
-    background-color: black;
-    width:20px;
-    height:20px;
-}
+
 .shadow{
-    z-index: -2;
+    z-index: -4;
     margin-top:-20px;
     background-color: rgba(0, 0, 0, 0.282);
-    width:400px;
-    height:40px;
+    width:450px;
+    height:20px;
     border-radius:50%;
 }
 .attempts{
@@ -172,12 +202,11 @@ background-color: rgba(0, 0, 0, 0.458);
 border-radius:40%;
 padding:0 5px;
 }
+
 footer {
-    
     position: fixed;
     top:93%;
     left:85%;
-
 }
 footer a{
     background-color: rgba(0, 0, 0, 0.633);
@@ -186,9 +215,55 @@ footer a{
  text-decoration: none;
  color:yellow;
 }
+.sorryText{
+    color:#61406d;
+}
+.sorryText span{
+    color:green;
+    font-size: 2rem;
+}
+@media  only screen and (max-width:768px) {
 
-@media  only screen and (max-width:400px) {
-    .board{
-        transform: scale(0.5);
+    html{
+        
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    body{
+        height:min-height;
+    }
+    .main{
+        font-size:16px;
+       display: grid;
+       
+    }
+    header{
+        text-align: center;
+        margin: auto;
+        margin-top:20px;
+    }
+ button{
+    width: 50%;
+    margin:10px 2px;
+ }
+ input{
+    width:100%;
+    font-size: 14px;
+ }
+    .sections{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .white-board{
+      width:90%;
+    }
+    .choose-level{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .attempts{
+        width: 100%;
     }
 }
