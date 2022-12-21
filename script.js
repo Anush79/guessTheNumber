@@ -8,6 +8,8 @@ let btn_easy = document.querySelector(".easy");
 let btn_medium = document.querySelector(".medium");
 let btn_hard = document.querySelector(".hard");
 let instruction = document.querySelector(".instruction");
+const win_sound = new Audio('win_sound.mp3');
+const over_sound = new Audio('game-over.mp3');
 
 btn_reset.addEventListener("click", function () {
   location.reload();
@@ -26,10 +28,6 @@ class computation {
   }
 }
 
-// var number_easy = Math.floor(Math.random() * 100);
-// var number_medium = Math.floor(Math.random() * 50);
-// var number_hard = Math.floor(Math.random() * 10);
-
 let current_level = "";
 btn_easy.addEventListener("click", () => {
   instruction.innerHTML =
@@ -39,7 +37,7 @@ btn_easy.addEventListener("click", () => {
 
 btn_medium.addEventListener("click", function () {
   instruction.innerHTML =
-    "<h3 class=level>Medium level</h3><p>Guess a Number between 0 to 50</p><p>You will get 6 attempts only.</p>";
+    "<h3 class=level>Medium level</h3><p>Guess a Number between 0 to 50</p><p>You will get 7 attempts only.</p>";
   return (current_level = "medium");
 });
 
@@ -80,7 +78,7 @@ function checkeasy() {
   let number = computer.getvalue()[0];
   count++;
   var guess = Number(input.value);
-
+ 
   if (!win) {
     if (count < 11) {
       if (guess < 1 || guess > 100) {
@@ -88,7 +86,8 @@ function checkeasy() {
         setTimeout(() => (errormsg.innerText = ""), 3000);
       } else if (guess === number) {
         output.style.color = "green";
-        output.innerText = `Yay! You made it in ${count} attempts only. You are a genius`;
+        output.innerText = `Yay! You made it in ${count} attempts only. You are amazing 🎉`;
+        win_sound.play();
         win = true;
         submit.innerText = "click to play more";
       } else if (guess > number) {
@@ -111,6 +110,7 @@ function checkeasy() {
       output.style.color = "red";
       output.innerHTML = `<p >Oh no! you exceeded number of attempts 🤷‍♀️</p><p class="sorryText">I had the number <span>${number}</span> in my mind 😞</p>`;
       btn_reset.style.display = "block";
+      over_sound.play();
       submit.style.display = "none";
     }
   } else {
@@ -129,8 +129,9 @@ function checkmedium() {
         setTimeout(() => (errormsg.innerText = ""), 3000);
 
       } else if (guess === number) {
+        win_sound.play();
         output.style.color = "green";
-        output.innerText = `Yay! You made it in ${count} attempts only. You are a genius`;
+        output.innerText = `Yay! You made it in ${count} attempts only. You are outstanding 🥳`;
         win = true;
         submit.innerText = "click to play more";
       } else if (guess > number) {
@@ -144,6 +145,7 @@ function checkmedium() {
       output.innerHTML = `<p >Oh no! You ran out of attempts🤷‍♀️</p><p class="sorryText">I had the number <span>${number}</span> in my mind 😞</p>`;
       btn_reset.style.display = "block";
       submit.style.display = "none";
+      over_sound.play();
     }
   } else {
     location.reload();
@@ -162,8 +164,9 @@ function checkhard() {
         setTimeout(() => (errormsg.innerText = ""), 3000);
 
       } else if (guess === number) {
+        win_sound.play();
         output.style.color = "green";
-        output.innerText = `Yay! You made it in ${count} attempts only. You are a genius`;
+        output.innerText = `Yay! You made it in ${count} attempts only. You are a total genius 😎🎉`;
         win = true;
         submit.innerText = "click to play more";
       } else if (guess > number) {
@@ -177,6 +180,7 @@ function checkhard() {
       output.innerHTML = `<p >Oh no! There are no attempts left🤷‍♀️</p><p class="sorryText">I had the number <span>${number}</span> in my mind 😞</p>`;
       btn_reset.style.display = "block";
       submit.style.display = "none";
+      over_sound.play();
     }
   } else {
     location.reload();
