@@ -8,8 +8,8 @@ let btn_easy = document.querySelector(".easy");
 let btn_medium = document.querySelector(".medium");
 let btn_hard = document.querySelector(".hard");
 let instruction = document.querySelector(".instruction");
-const win_sound = new Audio('win_sound.mp3');
-const over_sound = new Audio('game-over.mp3');
+const win_sound = new Audio("win_sound.mp3");
+const over_sound = new Audio("game-over.mp3");
 
 btn_reset.addEventListener("click", function () {
   location.reload();
@@ -27,27 +27,24 @@ class computation {
     return [this.#number_easy, this.#number_medium, this.#number_hard];
   }
 }
-
 let current_level = "";
 btn_easy.addEventListener("click", () => {
   instruction.innerHTML =
     "<h3 class=level>Easy level</h3><p> Guess a Number between 0 to 100</p><p>You will get 10 attempts only.</p>";
   return (current_level = "easy");
 });
-
 btn_medium.addEventListener("click", function () {
   instruction.innerHTML =
     "<h3 class=level>Medium level</h3><p>Guess a Number between 0 to 50</p><p>You will get 7 attempts only.</p>";
   return (current_level = "medium");
 });
-
 btn_hard.addEventListener("click", function () {
   instruction.innerHTML =
     "<h3 class=level>Hard level</h3><p>Guess a Number between 0 to 10</p><p>You will get 3 attempts only.</p>";
   return (current_level = "hard");
 });
 
-submit.addEventListener("click", () => {
+function check() {
   switch (current_level) {
     case "easy":
       checkeasy();
@@ -70,7 +67,7 @@ submit.addEventListener("click", () => {
 
       break;
   }
-});
+}
 
 let computer = new computation();
 
@@ -78,7 +75,7 @@ function checkeasy() {
   let number = computer.getvalue()[0];
   count++;
   var guess = Number(input.value);
- 
+
   if (!win) {
     if (count < 11) {
       if (guess < 1 || guess > 100) {
@@ -127,7 +124,6 @@ function checkmedium() {
       if (guess < 1 || guess > 50) {
         errormsg.innerText = "Please enter a number between 1 and 50";
         setTimeout(() => (errormsg.innerText = ""), 3000);
-
       } else if (guess === number) {
         win_sound.play();
         output.style.color = "green";
@@ -162,7 +158,6 @@ function checkhard() {
       if (guess < 1 || guess > 10) {
         errormsg.innerText = "Please enter a number between 1 and 10";
         setTimeout(() => (errormsg.innerText = ""), 3000);
-
       } else if (guess === number) {
         win_sound.play();
         output.style.color = "green";
@@ -186,3 +181,6 @@ function checkhard() {
     location.reload();
   }
 }
+
+submit.addEventListener("click", check);
+input.addEventListener("change", check);
