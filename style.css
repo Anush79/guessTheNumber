@@ -19,7 +19,7 @@ body{
 }
 .sections{
    display:grid;
-   grid-template-columns: 1fr 5fr 1fr ;
+   grid-template-columns: 1fr 5fr 2fr ;
    align-items: center;
 
 }
@@ -175,7 +175,7 @@ margin-top:-30px;
 
 .attempts li{
     color:#ffee00;
-    margin-left:30%;
+    margin-left:1%;
     margin-top:15px;
     animation-name: moveInleft;
     animation-duration: 2s;  
@@ -204,9 +204,9 @@ padding:0 5px;
 }
 
 footer {
-    /* position: fixed;
+    position: fixed;
     top:93%;
-    left:85%; */
+    left:85%;
 }
 footer a{
     background-color: rgba(0, 0, 0, 0.633);
@@ -233,7 +233,6 @@ footer a{
    }
    main{
     overflow-x: hidden;
-    
     display:grid;
     grid-template-rows: 1fr 8fr;
     align-items: end;
@@ -270,7 +269,6 @@ footer a{
     width: 100px;
     font-size: 14px;
     }
-
    .board{
     transform: scale(0.8);
    }
