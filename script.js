@@ -183,4 +183,4 @@ function checkhard() {
 }
 
 submit.addEventListener("click", check);
-input.addEventListener("change", check);
+
