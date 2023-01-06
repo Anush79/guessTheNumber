@@ -8,8 +8,8 @@ let btn_easy = document.querySelector(".easy");
 let btn_medium = document.querySelector(".medium");
 let btn_hard = document.querySelector(".hard");
 let instruction = document.querySelector(".instruction");
-const win_sound = new Audio("win_sound.mp3");
-const over_sound = new Audio("game-over.mp3");
+const win_sound = new Audio("./sounds/win_sound.mp3");
+const over_sound = new Audio("./sounds/game-over.mp3");
 
 btn_reset.addEventListener("click", function () {
   location.reload();
