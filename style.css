@@ -205,8 +205,8 @@ padding:0 5px;
 
 footer {
     position: fixed;
-    top:93%;
-    left:85%;
+    bottom:3%;
+    right:5%;
 }
 footer a{
     background-color: rgba(0, 0, 0, 0.633);
