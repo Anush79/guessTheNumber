@@ -70,8 +70,10 @@ Go to the project directory
 
 
 ## Screenshots
+![image](https://user-images.githubusercontent.com/66175237/211012105-0988d0db-e392-4faf-b966-1adb489b6f78.png)
+![image](https://user-images.githubusercontent.com/66175237/211012380-603ddf74-b1a6-4577-af18-9f579fdb9994.png)
+![image](https://user-images.githubusercontent.com/66175237/211012626-cfdc91b0-353c-4ab1-939c-7abe87b3fa6d.png)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
 
 ## Authors
