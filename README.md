@@ -17,13 +17,15 @@ The Range of numbers and rules is decides according to the level picked.
 ## Rules
 
 1. **Easy level** Range: 0-100
-10 attempts with easy hints and previous guesses shown on right side.
+
+   10 attempts with easy hints and previous guesses shown on right side.
 
 2. **Medium level**  Range: 0-50
-  7 chances with the little hints and previous attempts shown on right side.
+  
+   7 chances with the little hints and previous attempts shown on right side.
 
 3. **Hard level**  Range: 0-10
-will have only 3 chances, and numbers to guess from will be 1-10.
+   User will have only 3 chances with minimal hints and no previous guesses to be shown.
 
 ## Live Demo
 
