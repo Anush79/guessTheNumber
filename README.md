@@ -32,15 +32,6 @@ Click [Guess the Number](https://you-guess-my-num.netlify.app/)
 
 
 
-## Authors
-
-- [@Anush79](https://www.github.com/Anush79)
-
-
-## 🛠 Skills
-Javascript, HTML, CSS, React, Java, Git, NodeJS...
-
-
 ## Run Locally
 
 Clone the project
@@ -76,7 +67,21 @@ Go to the project directory
 
 
 
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+
+## Authors
+
+- [@Anush79](https://www.github.com/Anush79)
+
+
 # Hi, I'm Anushka ! 👋
+
+
+## 🛠 Skills
+Javascript, HTML, CSS, React, Java, Git, NodeJS...
 
 
 ## 🚀 About Me
@@ -90,15 +95,7 @@ I'm a frontend developer from India.
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/TheIndianGirl56)
 
 
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-
 ## Appendix
 
 I am still learning , so there might be some flaws and bad practices. Suggestions are always welcome.
 
-
-  
-  
