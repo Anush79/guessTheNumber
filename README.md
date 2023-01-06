@@ -24,7 +24,8 @@ The Range of numbers and rules is decides according to the level picked.
   
    7 chances with the little hints and previous attempts shown on right side.
 
-3. **Hard level**  Range: 0-10
+3. **Hard level**  Range: 0-10   
+
    User will have only 3 chances with minimal hints and no previous guesses to be shown.
 
 ## Live Demo
