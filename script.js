@@ -10,6 +10,7 @@ let btn_hard = document.querySelector(".hard");
 let instruction = document.querySelector(".instruction");
 const win_sound = new Audio("./sounds/win_sound.mp3");
 const over_sound = new Audio("./sounds/game-over.mp3");
+const button_sound = new Audio("./sounds/button-sound.mp3");
 
 btn_reset.addEventListener("click", function () {
   location.reload();
@@ -45,6 +46,7 @@ btn_hard.addEventListener("click", function () {
 });
 
 function check() {
+  button_sound.play();
   switch (current_level) {
     case "easy":
       checkeasy();
