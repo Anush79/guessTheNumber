@@ -40,7 +40,10 @@ header{
     margin-top: -50px;
     text-align:left;
 }
-
+.level{
+    border: 2px solid;
+    border-radius: 10px;
+}
 .instruction{
     text-align: center;
     margin:5px;

@@ -31,17 +31,17 @@ class computation {
 let current_level = "";
 btn_easy.addEventListener("click", () => {
   instruction.innerHTML =
-    "<h3 class=level>Easy level</h3><p> Guess a Number between 0 to 100</p><p>You will get 10 attempts only.</p>";
+    "<h3 class='level' style='border-color:green;'>Easy level</h3><p> Guess a Number between 0 to 100</p><p>You will get 10 attempts only.</p>";
   return (current_level = "easy");
 });
 btn_medium.addEventListener("click", function () {
   instruction.innerHTML =
-    "<h3 class=level>Medium level</h3><p>Guess a Number between 0 to 50</p><p>You will get 7 attempts only.</p>";
+    "<h3 class='level' style='border-color:blue;'>Medium level</h3><p>Guess a Number between 0 to 50</p><p>You will get 7 attempts only.</p>";
   return (current_level = "medium");
 });
 btn_hard.addEventListener("click", function () {
   instruction.innerHTML =
-    "<h3 class=level>Hard level</h3><p>Guess a Number between 0 to 10</p><p>You will get 3 attempts only.</p>";
+    "<h3 class='level' style='border-color:red;'>Hard level</h3><p>Guess a Number between 0 to 10</p><p>You will get 3 attempts only.</p>";
   return (current_level = "hard");
 });
 
