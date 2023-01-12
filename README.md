@@ -28,7 +28,7 @@ The Range of numbers and rules is decides according to the level picked.
 
    User will have only 3 chances with minimal hints and no previous guesses to be shown.
 
-## Live Demo
+## Live Website
 
 Click [Guess the Number](https://you-guess-my-num.netlify.app/)
 
